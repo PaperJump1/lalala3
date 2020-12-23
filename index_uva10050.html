@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Emblazoned by TEMPLATED</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="Script1.js"></script>
+
+    <script>
+        var x = 0;
+        function CON() {
+            x = 1;
+        }
+
+        var time = 25 * 60;
+        function CountDown() {
+            if (time >= 0) {
+                sec = Math.floor(time % 60);
+                min = Math.floor(time / 60);
+
+                information = min + "分" + sec + "秒" + "時間結束";
+                if (x == 1) {
+                    document.getElementById("TI").innerHTML = information;
+                }
+                if (x == 1) {
+                    --time;
+                }
+            } else {
+                clearInterval(TI);
+                document.getElementById("TI").innerHTML = "時間結束";
+            }
+        }
+        TI = setInterval("CountDown()", 1000);
+    </script>
+</head>
+<body>
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html" class="first">主頁</a></li>
+                    <li><a href="ALLP.html">全部題目</a></li>
+                    <li><a href="choose.html">題目選擇器</a></li>
+                    <li><a href="#">經典題目</a></li>
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div id="page">
+            <div id="logo">
+                <h1>Hertals</h1>
+
+            </div>
+            <hr />
+            
+            <div id="content">
+                <h1>UVA 10050</h1>
+                <h2>▌題目敘述</h2>
+                <p>
+                    一個社會研究組織採用了一組簡單的參數來模擬我們國家政黨運作的行為。
+                    參數之一是一個正整數h，h稱為罷會(hartal)參數，它表示同一個政黨連續兩次連續罷會的間隔天數。
+                    儘管該參數有點過於簡單，但還是能用於預測政黨罷會造成的影響。<br />
+                    模擬的起始天一定是星期天，並假設在每週的假日(星期五和星期六)不會有任何罷會情形。
+                </p>
+                <h2>▌輸入說明</h2>
+                <p>
+                    輸入第一行有一個整數T，代表有T組測資。
+                    每組測資第一行包含一個整數N (7 ≤ N ≤ 3650)，N代表模擬的天數。
+                    下一行包含一個整數P (1 ≤ P ≤ 100)，表示有幾個政黨。
+                    接下來的P行，第i行包含一個正整數hi(永遠不會是7的倍數)，代表第i個政黨的罷會參數。
+                </p>
+                <h2>▌範例輸入</h2>
+                <p>
+                    2<br />
+                    14<br />
+                    3<br />
+                    3<br />
+                    4<br />
+                    8<br />
+                    100<br />
+                    4<br />
+                    12<br />
+                    15<br />
+                    25<br />
+                    40
+                </p>
+                <h2>▌範例輸出</h2>
+                <p>
+                    5<br />
+                    15
+                </p>
+                <h2>▌答案代碼</h2>
+                <div id="la">
+
+                    <pre id="div1">
+
+
+/*
+ 題目想法:
+ 因為總天數的範圍小於3650，所以我們可以枚舉所有天數的情況
+把損失掉的天數加起來，並且除去遇到假日時的情況
+*/
+
+#include &ltiostream&gt
+#include &ltvector&gt
+using namespace std;
+
+int main() {
+int case_number, days, party_num, cnt1, cnt2;
+cin >> case_number;
+for (int i = 0; i < case_number; i++) {
+cnt = 0;
+cin >> days >> party_num;
+vector&ltint&gt day(days + 1, 1); //所有天數
+vector&ltint&gt me(party_num, 0); //每個政黨放假的頻率
+for (int j = 0; j < party_num; j++) {
+	cin >> me[j];
+}
+for (auto i : me) {
+	for (cnt1 = i; cnt1 <= days;) { //把每一天都跑一次
+	 if (cnt1 % 7 != 0 && cnt1 % 7 != 6) { //除去假日情況
+	   day[cnt1] = 0;
+		}
+		cnt1 += i; //政黨每隔n天停工一次
+                    同理 n+n n+n+n也都停工
+		}
+		}
+	for (int j = 1; j <= days; j++) {
+	 if (!day[j]) cnt2++; //如果當天停工就累加計數器
+	}
+	cout << cnt2 << endl;
+	}
+}
+
+                    
+                    </pre>
+                </div>
+                <br />             
+                <button id="button1" style="border:none; color :black;  background-color:#00FF00; font-size:15px; outline:none">顯示code▼</button>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+            </div>
+           
+            <div id="sidebar">
+                <button class="button1" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★題目 ↓</button>
+                <div class="lal">
+                    <div class="div1">
+                        <a href="index_uva10050.html" style="color:white">UVA10050</a><br /><br />
+                        <a href="index_uva1225.html" style="color:white">UVA1225</a><br /><br />
+                        <a href="#" style="color:white">UVA100</a><br /><br />
+                        <a href="#" style="color:white">UVA10055</a><br /><br />
+                        <a href="#" style="color:white">UVA00494</a><br /><br />
+                        <a href="#" style="color:white">UVA10696</a><br /><br />
+                    </div>
+                </div>
+                <br /><br />
+                      <button class="button2" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★★題目 ↓</button>
+                <div class="lal">
+                    <div class="div2">
+                        <a href="index_uva457.html" style="color:white">UVA457</a><br /><br />
+                        <a href="index_uva729.html" style="color:white">UVA729</a><br /><br />
+                        <a href="index_uva10954.html" style="color:white">UVA10954</a><br /><br />
+                        <a href="#" style="color:white">UVA10812</a><br /><br />
+                        <a href="#" style="color:white">UVA10696</a><br /><br />
+                        <a href="#" style="color:white">UVA12149</a><br /><br />
+                    </div>
+                </div>
+                <br /><br />
+                      <button class="button3" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★★★題目 ↓</button>
+                <div class="lal">
+                    <div class="div3">
+                        <a href="index_uva540.html" style="color:white">UVA540</a><br /><br />
+                        <a href="index_uva11389.html" style="color:white">UVA11389</a><br /><br />
+                        <a href="index_uva10276.html" style="color:white">UVA10276</a><br /><br />
+                        <a href="index_uva10815.html" style="color:white">UVA10815</a><br /><br />
+                        
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <form>
+                    <button type="button" onClick="CON()"style="border:none; color :black;  font-size:20px;">開始計時</button>
+
+                    <p id="TI" style="color:white;font-size:30px"></p>
+                </form>
+            </div>
+            
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+    </div>
+
+</body>
+</html>

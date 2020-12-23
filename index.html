@@ -1,22 +1,34 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
 
-Name       : Emblazoned 
-Description: A two-column, fixed-width design for 1024x768 screen resolutions.
-Version    : 1.0
-Released   : 20090829
-
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Emblazoned by TEMPLATED</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Emblazoned by TEMPLATED</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="Script1.js"></script>
+	<script>
+		$(function () {
+			$("#search-submit").click(function () {
+				var key = $("#search-text").val();
+
+				for (i = 0; i <= 8; i++) {
+					if (key == problemSN[i]) {
+						window.location.href = problemHRE[i];
+					}
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+
+	</script>
 </head>
 <body>
 	<div id="header-wrapper">
@@ -24,102 +36,121 @@ Released   : 20090829
 		<div id="menu">
 			<ul>
 				<li><a href="#" class="first">主頁</a></li>
-				<li><a href="#">全部題目</a></li>
+				<li><a href="ALLP.html">全部題目</a></li>
 				<li><a href="choose.html">題目選擇器</a></li>
-				<li><a href="#">經典題目</a></li>
+				
 				
 			</ul>
 		</div>
-		<!-- end #menu -->
+		
 		<div id="search">
 			<form method="get" action="">
 				<fieldset>
-				<input type="text" name="s" id="search-text" size="15" />
-				<input type="submit" id="search-submit" value="GO" />
+					<input type="text" name="s" value="uva10050" id="search-text" size="15" />
+					<button type="button" id="search-submit">GO</button>
 				</fieldset>
 			</form>
 		</div>
-		<!-- end #search -->
+		
 	</div>
 	</div>
-	<!-- end #header -->
-	<!-- end #header-wrapper -->
+	
 <div id="wrapper">
 	<div id="page">
 	<div id="logo">
-		<h1>UVA題目和解答 </h1>
+		<h1>各種程式題目和解答 </h1>
 		
 	</div>
 	<hr />
-	<!-- end #logo -->
-		<div id="content">
-			<div class="post">
-				<h2 class="title"><a href="#">Welcome to Emblazoned </a></h2>
-				<p class="meta">Sunday, April 26, 2009 7:27 AM Posted by <a href="#">Someone</a></p>
-				<div class="entry">
-					<p>This is <strong>Emblazoned </strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>, released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license.  You're free to use this template for anything as long as you credit us. Enjoy :)</p>
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. </p>
-				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Sunday, April 26, 2009 7:27 AM Posted by <a href="#">Someone</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec   consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.</p>
-				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Sunday, April 26, 2009 7:27 AM Posted by <a href="#">Someone</a></p>
-				<div class="entry">
-					<p>Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. </p>
-				</div>
+	
+	<div id="content">
+		<div class="post">
+			<h2 class="title"><a href="#">歡迎來到search UVA for solution</a></h2>
+			<br />
+			<br />
+			<div class="entry">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本網站當初的設計是為了提供對於題目有所不解或想更精進自己的程式員新手。&nbsp;
+				我們設計了可以能夠隨機選擇的蒐尋器，&nbsp;以及每道題可提供題目的敘述&nbsp;、&nbsp;清晰的解題思路和程式碼。
+				如果你想追求更難的挑戰，&nbsp;你可以試試我們的倒數計時器，&nbsp;嘗試在限定時間內想出或解出題目的想法或答案。&nbsp;
+				<br />
+				<br />
+				<br />
+
+				<h2>
+					難度對應表<br />
+				</h2>
+				<br />
+				<p>
+					[★] =  Easy<br />
+					[★★] = Medium<br />
+					[★★★] = Difficult<br />
+				</p>
+				<br />
+				<br />
+				<h2>
+					倒數計時器設置時間為25分鐘
+				</h2>
 			</div>
 		</div>
-		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
+		<div class="post">
+			
+		</div>
+		<div class="post">
+			
+			<div class="entry">
 				
-				<li>
-					<h2>入門題 </h2>
-					<ul>
-						<li><a href="index_uva1.html">題目1</a></li>
-						<li><a href="index_uva2.html">題目2</a></li>
-						<li><a href="index_uva3.html">題目3</a></li>
-						<li><a href="#">題目4</a></li>
-						<li><a href="#">題目5</a></li>
-						<li><a href="#">題目6</a></li>
-						<li><a href="#">題目7</a></li>
-						<li><a href="#">題目8</a></li>
-					</ul>
-				</li>
-				<li>
-					<h2>Turpis nulla</h2>
-					<ul>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-						<li><a href="#">Magna lacus bibendum mauris</a></li>
-						<li><a href="#">Velit semper nisi molestie</a></li>
-						<li><a href="#">Eget tempor eget nonummy</a></li>
-						<li><a href="#">Nec metus sed donec</a></li>
-					</ul>
-				</li>
-			</ul>
+			</div>
 		</div>
-		<!-- end #sidebar -->
+		<br /><br />
+	</div>
+		
+	<div id="sidebar">
+		
+		<button class="button1" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★題目 ↓</button>
+		<div class="lal">
+			<div class="div1">
+				<a href="index_uva10050.html" style="color:white">UVA10050</a><br /><br />
+				<a href="index_uva1225.html" style="color:white">UVA1225</a><br /><br />
+				<a href="#" style="color:white">UVA100</a><br /><br />
+				<a href="#" style="color:white">UVA10055</a><br /><br />
+				<a href="#" style="color:white">UVA00494</a><br /><br />
+				<a href="#" style="color:white">UVA10696</a><br /><br />
+			</div>
+		</div>
+		<br /><br />
+		<button class="button2" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★★題目 ↓</button>
+		<div class="lal">
+			<div class="div2">
+				<a href="index_uva457.html" style="color:white">UVA457</a><br /><br />
+				<a href="index_uva729.html" style="color:white">UVA729</a><br /><br />
+				<a href="index_uva10954.html" style="color:white">UVA10954</a><br /><br />
+				<a href="#" style="color:white">UVA10812</a><br /><br />
+				<a href="#" style="color:white">UVA10696</a><br /><br />
+				<a href="#" style="color:white">UVA12149</a><br /><br />
+			</div>
+		</div>
+		<br /><br />
+		<button class="button3" style="border:none; color :white;  background-color:#197694; font-size:30px; outline:none">▌UVA★★★題目 ↓</button>
+		<div class="lal">
+			<div class="div3">
+				<a href="index_uva540.html" style="color:white">UVA540</a><br /><br />
+				<a href="index_uva11389.html" style="color:white">UVA11389</a><br /><br />
+				<a href="index_uva10276.html" style="color:white">UVA10276</a><br /><br />
+				<a href="index_uva10815.html" style="color:white">UVA10815</a><br /><br />
+
+			</div>
+		</div>
+	</div>
+		
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 	</div>
-	<!-- end #page -->
+	
 	<div id="footer-bgcontent">
 	<div id="footer">
-		<p>&copy; Untitled. All rights reserved. <br />Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+		
 	</div>
 	</div>
-	<!-- end #footer -->
+	
 </body>
 </html>
